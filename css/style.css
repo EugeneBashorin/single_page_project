@@ -3,15 +3,70 @@ body{
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 16px;
 }
+
 .wrapper{
-    max-width: 1170px;
+    max-width: 1250px;/*было 1190 => добавили 2 padding*/
+    padding: 0 40px;/*чтобы при сужении текс не налазил на границу браузера*/
     margin: 0 auto;     /*центровка блока по середине*/
+
 }
-.header-wrap{           /*для выравнивания 2х элементов header относительно друг-друга*/
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /*для выравнивания блока nav отн. logo*/
+
+h1{
+    color: #ffffff;
+    text-transform: uppercase;
+    /* Text style for "Best Creat" */
+    font-size: 45px;
+    font-weight: 300;
+    line-height: 60px;
+    margin-bottom: 90px;
+    }
+    
+h1 .lg{
+    /* Text style for "Design / B" */
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 80px;
+    letter-spacing: -3px;
+    display: block;
+    }
+    
+h1 .sm{
+    /* Text style for "We Make Gr" */
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 60px;
+    }
+h6{
+    /* Style for "Our Story" */
+color: #0d0d0d;
+font-size: 20px;
+font-weight: 700;
+line-height: 25px;
+text-transform: uppercase;
 }
+/*Buttons*/
+.btn{
+    display: inline-block;/*все кнопки должны быть  блочными элементами*/
+    vertical-align: middle;
+    height: 42px;
+    padding: 11px 35px 0;
+    border: 2px solid #ffffff;
+    background-color: transparent;/*transparent Устанавливает прозрачный фон*/
+    color: #ffffff;
+    font-family: "Open Sans - Semibold", Arial, sans-serif;;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.btn:hover{
+    background-color: #f39c12;
+    border-color: #f39c12;
+    color: #ffffff;     /*цвет текста повторяется*/
+    text-decoration: none;/*чтоб не проскочило подчеркивание и т.д.*/
+}
+
 header{
     position: absolute; /*фиксируем header*/
     top:84px; /*положение от верх края*/
@@ -19,10 +74,13 @@ header{
     right: 0;
     z-index: 99; /*для того чтобы был выше всех блоков на сайте*/
 }
-.banner{
-    height: 1100px;
-    background: url("../img/banner.png") no-repeat center top;
+
+.header-wrap{           /*для выравнивания 2х элементов header относительно друг-друга*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*для выравнивания блока nav отн. logo*/
 }
+
 .logo a{
     display: flex;/*для упрощения работы с позиционированием flex box*/
     align-items: center;/*выравнивание по вертикали элемента*/
@@ -56,8 +114,8 @@ header{
     color: #ffffff;
     position: absolute; /*позиционирование absolute относительно menu_item, где position: relative*/
     left: 100%;         /*конец завис эл. берет все ширину и прижимается к правому краю*/
-    margin-left: 44px;
     top:0;
+    margin-left: 40px;
 }
 .menu_item:last-child:after{ /*для удаления последнего элемента "\\"*/
     display: none;
@@ -72,4 +130,96 @@ header{
 }
 .menu_link:hover{
     color: #0d0d0d;
+}
+/*banner*/
+.banner{ 
+    padding-top: 450px;
+    padding-bottom: 280px;
+    height: 1100px;
+    text-align: center;
+    background: url("../img/banner.png") no-repeat center top;
+}
+
+.about{
+    padding: 100px 0;
+    /*height: 1180px;
+    text-align: justify;*/
+}
+.heading{
+    display: flex;
+    align-items: center;
+    /*-ms-align-items:center;*/
+    margin-bottom: 150px;
+}
+.heading h2{
+    /* Style for "About" */
+    /*height: 21px;*/
+    color: #0d0d0d;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 35px;
+    text-transform: uppercase;
+    position: relative;
+    margin-right: 40px;
+}
+.heading h2:after{
+    content: '';/*символы, которые нельзя отобразить в html*/
+    display: block;
+    width: 4px;
+    height: 45px;
+    background-color: #f39c12;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-top: -22px; /*half of hight element(bind to hight element)*/
+    margin-left: 19px;
+}
+.heading p{
+    /* Style for "Proin grav" */
+    flex: 1;/*будет занимать все пространство*/
+    color: #4d4d4d;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    text-transform: uppercase;
+}
+
+.about-wrapp{
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 2px solid #e6e6e6;
+    padding-bottom: 120px;
+}
+
+.about-wrap-content{
+display: flex;
+align-items: flex-start;
+margin-right: 60px;
+flex: 1;/*элемент занимает все свободное пространство, прижимает картинку к краю*/
+}
+.about-wrap-content_icon{
+    width: 125px;
+    height: 125px;
+    flex:none;          /*при растяжении эл-тов круг не менял форму*/
+    margin-right: 29px;
+    border: 2px solid #f39c12;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+.about-wrap-content_text h6{
+    margin-bottom: 20px;
+}
+
+.about-wrap-content_text p{
+    color: #737373;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 28px;
+}
+.about-wrap-content_text .red-text{
+    color: #e74c3c;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 28px;
+    margin-bottom: 25px;
 }
