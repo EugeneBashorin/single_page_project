@@ -1,0 +1,75 @@
+body{
+    color: #4d4d4d;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 16px;
+}
+.wrapper{
+    max-width: 1170px;
+    margin: 0 auto;     /*центровка блока по середине*/
+}
+.header-wrap{           /*для выравнивания 2х элементов header относительно друг-друга*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*для выравнивания блока nav отн. logo*/
+}
+header{
+    position: absolute; /*фиксируем header*/
+    top:84px; /*положение от верх края*/
+    left: 0;
+    right: 0;
+    z-index: 99; /*для того чтобы был выше всех блоков на сайте*/
+}
+.banner{
+    height: 1100px;
+    background: url("../img/banner.png") no-repeat center top;
+}
+.logo a{
+    display: flex;/*для упрощения работы с позиционированием flex box*/
+    align-items: center;/*выравнивание по вертикали элемента*/
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif ;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 45px;
+    text-transform: uppercase;
+}
+.menu{
+    list-style: none;/*delete markers to UL*/
+    display: flex;
+}
+.menu_item{                     /*расстояние между элементами LI ссылками nav*/
+    margin-left: 90px;
+    position: relative; /*для позиционирования menu_item:after => '\\'  */
+}
+
+.menu_item:after{                     /*расстояние между элементами LI ссылками nav*/
+    content: '\\\\';/*символы, которые нельзя отобразить в html*/
+    display: block;/**/
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #ffffff;
+    position: absolute; /*позиционирование absolute относительно menu_item, где position: relative*/
+    left: 100%;         /*конец завис эл. берет все ширину и прижимается к правому краю*/
+    margin-left: 44px;
+    top:0;
+}
+.menu_item:last-child:after{ /*для удаления последнего элемента "\\"*/
+    display: none;
+}
+.menu_link{
+    /*font-family: "Open Sans - Semibold";/*уже есть в body*/
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+.menu_link:hover{
+    color: #0d0d0d;
+}
