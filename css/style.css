@@ -198,8 +198,12 @@ margin-right: 60px;
 flex: 1;/*элемент занимает все свободное пространство, прижимает картинку к краю*/
 }
 .about-wrap-content_icon{
+    display:flex;
+    align-items: center; /*vertical align*/
+    justify-content: center; /*gorisontal align*/
     width: 125px;
     height: 125px;
+    font-size: 40px;    /*размер иконки переведенной в текст*/
     flex:none;          /*при растяжении эл-тов круг не менял форму*/
     margin-right: 29px;
     border: 2px solid #f39c12;
@@ -222,4 +226,19 @@ flex: 1;/*элемент занимает все свободное простр
     font-weight: 300;
     line-height: 28px;
     margin-bottom: 25px;
+}
+.about-wrap-img{
+    position: relative;
+}
+.about-wrap-img_icon{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    /*background-color: #ffffff;*/
 }
