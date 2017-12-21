@@ -19,8 +19,8 @@ h1{
     font-weight: 300;
     line-height: 60px;
     margin-bottom: 90px;
-    }
-    
+}
+
 h1 .lg{
     /* Text style for "Design / B" */
     font-size: 70px;
@@ -28,21 +28,21 @@ h1 .lg{
     line-height: 80px;
     letter-spacing: -3px;
     display: block;
-    }
-    
+}
+
 h1 .sm{
     /* Text style for "We Make Gr" */
     font-size: 40px;
     font-weight: 300;
     line-height: 60px;
-    }
+}
 h6{
     /* Style for "Our Story" */
-color: #0d0d0d;
-font-size: 20px;
-font-weight: 700;
-line-height: 25px;
-text-transform: uppercase;
+    color: #0d0d0d;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    text-transform: uppercase;
 }
 /*Buttons*/
 .btn{
@@ -118,7 +118,7 @@ header{
     margin-left: 40px;
 }
 .menu_item:last-child:after{ /*для удаления последнего элемента "\\"*/
-    display: none;
+display: none;
 }
 .menu_link{
     /*font-family: "Open Sans - Semibold";/*уже есть в body*/
@@ -148,7 +148,7 @@ header{
 .heading{
     display: flex;
     align-items: center;
-    /*-ms-align-items:center;*/
+    -ms-align-items:center;
     margin-bottom: 150px;
 }
 .heading h2{
@@ -192,10 +192,9 @@ header{
 }
 
 .about-wrap-content{
-display: flex;
-align-items: flex-start;
-margin-right: 60px;
-flex: 1;/*элемент занимает все свободное пространство, прижимает картинку к краю*/
+    display: flex;
+    align-items: flex-start;
+    flex: 1;/*элемент занимает все свободное пространство, прижимает картинку к краю*/
 }
 .about-wrap-content_icon{
     display:flex;
@@ -217,6 +216,7 @@ flex: 1;/*элемент занимает все свободное простр
 .about-wrap-content_text p{
     color: #737373;
     font-size: 16px;
+    line-height: 25px;
     font-weight: 400;
     margin-bottom: 28px;
 }
@@ -229,6 +229,7 @@ flex: 1;/*элемент занимает все свободное простр
 }
 .about-wrap-img{
     position: relative;
+    margin-left: 60px;
 }
 .about-wrap-img_icon{
     position: absolute;
@@ -241,4 +242,115 @@ flex: 1;/*элемент занимает все свободное простр
     align-items: center;
     font-size: 32px;
     /*background-color: #ffffff;*/
+}
+.box-skills{
+    display: flex;
+    margin-top: 120px;
+}
+
+.box-skills-item{
+    flex: 1;
+    width: 50%;  
+    padding  
+}
+
+.box-skills-item img{
+    display: inline-block;
+    max-width:100%;
+}
+.box-skills_item_img{
+    padding-right: 50px;
+    text-align: right;
+}
+.box-skills_item_content{
+    padding-left: 40px;
+}
+
+/*Bars progress*/
+.box-bars{
+    margin-top: 60px;
+}
+.bars{
+    margin-bottom:35px;
+}
+.bars-title{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #0d0d0d;
+    margin-bottom: 10px;
+}
+.bars-title span{
+    /* Text style for "/" */
+    color: #bfbfbf;
+    font-weight: 600;
+}
+.bars-title .persent{
+    /* Text style for "88%" */
+    color: #0d0d0d;
+    font-weight: 300;
+}
+.bars-line{
+    background-color: #e7e7e7;
+    height: 10px;
+
+}
+.bars-line > div {
+    background-color: #f39c12;
+    height: 10px;
+}
+/*QUOT*/
+.box-quot
+{
+    padding: 250px 0;
+    text-align: center;
+    color: #fff;
+    background: url('../img/qout.png') no-repeat center top;
+    background-size: cover;
+}
+
+.quot_text
+{
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 60px;
+    color: #fff;
+    position: relative;
+    padding:0 50px;
+    margin-bottom: 30px;
+}
+
+.quot_text:after, .quot_text:before{
+    content: '"';
+    display: block;
+    position: absolute;
+    font-family: "Open Sans", sans-serif;
+    font-size: 110px;
+    font-weight: 700;
+    line-height: 60px;
+    top:0;
+}
+
+.quot_text:before{
+    left: 0;
+}
+.quot_text:after{
+    right: 0;
+}
+.quot_author{
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    text-transform: uppercase;
+
+}
+.quot_author:before{
+    content:'';
+    display: block;
+    margin:0 auto 20px;
+    width: 50px;
+    height: 4px;
+    background-color: #f39c12;
 }
