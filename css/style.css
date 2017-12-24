@@ -5,6 +5,7 @@ body{
 }
 
 .wrapper{
+    width: 100%;
     max-width: 1250px;/*было 1190 => добавили 2 padding*/
     padding: 0 40px;/*чтобы при сужении текс не налазил на границу браузера*/
     margin: 0 auto;     /*центровка блока по середине*/
@@ -140,11 +141,12 @@ display: none;
     background: url("../img/banner.png") no-repeat center top;
 }
 
-.about{
+/*.about{
     padding: 100px 0;
     /*height: 1180px;
     text-align: justify;*/
-}
+/*} =>.section-common*/
+
 .heading{
     display: flex;
     align-items: center;
@@ -210,6 +212,7 @@ display: none;
     border-radius: 50%;
     background-color: #ffffff;
 }
+
 .about-wrap-content_text h6{
     margin-bottom: 20px;
 }
@@ -302,6 +305,12 @@ display: none;
     height: 10px;
 }
 
+/*COMMON PADDING TO CLASSES ABOUT/TEAM/SERVICE/...*/
+.section-common
+{
+    padding: 100px 0 100px; 
+}
+
 /*section-quot background*/
 .section-bg
 {
@@ -369,9 +378,10 @@ display: none;
     background-color: #f39c12;
 }
 /*TEAM*/
-.box-team{
+/*.box-team{
    padding: 100px 0 100px; 
-}
+}   => section-common*/
+
 .team-list{
     display: flex;
     justify-content: space-between;
@@ -458,4 +468,96 @@ display: none;
 }
 .social_link:hover{
      color: #f39c12;
+}
+/*facts list*/
+.facts-list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.facts-list_item:hover .facts-list_icon{
+    color: #f39c12;
+    border-color: #ffffff;
+}
+.facts-list_item:hover [class*="icon"]:before{
+    color: #f39c12;
+}
+
+
+.facts-list_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 170px;
+    margin-bottom:30px;
+    font-size: 32px;
+    border: 2px solid #f39c12;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+.facts-list_icon [class*="icon"]:before{
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+.facts-list_item h5{
+    /* Style for "6K+ Coffee" */
+    color: #ffffff;
+    font-size: 25px;
+    line-height: 29px;
+    font-weight: 700;
+    text-align:center;
+}
+.facts-list_item h5 span{
+    /* Text style for "6K+" */
+    font-size: 45px;
+    line-height: 45px;
+    display: block;/*для представления в блочный элем. span/ перекидывает в новую строку*/
+}
+
+/*service*/
+.service-list{
+    display: flex;
+    text-align: center;
+    margin: 0 -10px;
+    /*margin-left: 30px;*/
+
+}
+.service-list_items{
+    padding: 0 10px;
+}
+.service-list_icon{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 105px;
+    height: 105px;
+    margin: 0 auto 30px;
+    border: 2px solid #f39c12;
+    border-radius: 50%;
+    color: #0d0d0d;
+    font-size: 27px;
+    transition: all 0.3s;
+}
+.service-list_icon [class*="icon"]:before{
+    color:#0d0d0d;
+    transition: all 0.3s;
+}
+.service-list_items:hover .service-list_icon{
+    background: #f39c12;
+}
+
+.service-list_items:hover .service-list_icon [class*="icon"]:before{
+    color:#ffffff;
+}
+
+.service-list h6{
+    margin-bottom:25px;
+}
+.service-list p{
+    color: #737373;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
 }
