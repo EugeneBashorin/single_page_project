@@ -45,6 +45,11 @@ h6{
     line-height: 25px;
     text-transform: uppercase;
 }
+.hr{
+    height: 2px;
+    margin: 120px 0;
+    background-color: #e6e6e6;
+}
 /*Buttons*/
 .btn{
     display: inline-block;/*все кнопки должны быть  блочными элементами*/
@@ -54,7 +59,7 @@ h6{
     border: 2px solid #ffffff;
     background-color: transparent;/*transparent Устанавливает прозрачный фон*/
     color: #ffffff;
-    font-family: "Open Sans - Semibold", Arial, sans-serif;;
+    font-family: "Open Sans - Semibold", Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
     text-transform: uppercase;
@@ -66,6 +71,10 @@ h6{
     border-color: #f39c12;
     color: #ffffff;     /*цвет текста повторяется*/
     text-decoration: none;/*чтоб не проскочило подчеркивание и т.д.*/
+}
+.btn-warning{
+    color: #0d0d0d;
+    border-color: #f39c12;
 }
 
 header{
@@ -190,8 +199,8 @@ display: none;
 .about-wrapp{
     display: flex;
     align-items: flex-start;
-    border-bottom: 2px solid #e6e6e6;
-    padding-bottom: 120px;
+    /*border-bottom: 2px solid #e6e6e6;
+    padding-bottom: 120px;*/
 }
 
 .about-wrap-content{
@@ -249,7 +258,7 @@ display: none;
 }
 .box-skills{
     display: flex;
-    margin-top: 120px;
+    /*margin-top: 120px;*/
 }
 
 .box-skills-item{
@@ -308,7 +317,7 @@ display: none;
 /*COMMON PADDING TO CLASSES ABOUT/TEAM/SERVICE/...*/
 .section-common
 {
-    padding: 100px 0 100px; 
+    padding: 105px 0 100px; 
 }
 
 /*section-quot background*/
@@ -318,7 +327,7 @@ display: none;
     align-items: center;
     height: 700px;
     background: url('../img/qout.png') no-repeat center top;
-    background-size: cover;
+    background-size: auto;/* cover;*/
 }
 /*QUOT*/
 /*.quot-box
@@ -548,16 +557,110 @@ display: none;
     background: #f39c12;
 }
 
+
+/*PRICING*/
 .service-list_items:hover .service-list_icon [class*="icon"]:before{
     color:#ffffff;
 }
-
-.service-list h6{
+.service-list_items h6{
     margin-bottom:25px;
 }
-.service-list p{
+.service-list_items p{
     color: #737373;
     font-size: 16px;
-    font-weight: 400;
     line-height: 28px;
+}
+.box-pricing{
+    display: flex;
+}
+.box-pricing .service-list_icon{
+    margin-left: 0;
+    width: 125px;
+    height: 125px;
+    font-size: 32px;
+}
+.pricing{
+    display: flex;
+    align-items: flex-start;
+    /*center; can't use center becouse we have different top/bottom borders*/
+    text-align: center;
+    margin-left: 5%;
+}
+.pricing-items{
+   border: 1px solid #e6e6e6;
+   width: 250px;
+}
+.pricing-items:first-child{
+    margin-top: 17px;
+    border-right: none;
+}
+.pricing-items:last-child{
+    margin-top: 17px;
+    border-left: none;
+}
+.pricing-items.active{
+    background-color: #f2f2f2;
+    border-right: none;
+    border-left: none;
+    border-top:17px solid #f39c12;
+    border-bottom:11px solid #e6e6e6;
+}
+.pricing-header{
+    padding: 25px 28px;
+}
+.pricing-items.active .pricing-header{
+    background-color: #f39c12;  
+}
+.pricing-header_title{
+    color: #0d0d0d;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 25px;
+    text-transform: uppercase;
+} 
+.pricing-items.active .pricing-header_title{
+    color: #ffffff;
+    
+}
+
+.pricing-header_title span:before{
+    content: "";
+    display: block;
+    margin: 5px auto;
+    height: 2px;
+    width: 50px;
+    background-color: #f39c12;
+}
+.pricing-items.active .pricing-header_title span:before{
+    background-color: #ffffff;
+}
+
+.pricing-list{
+    list-style: none;
+}
+.pricing-list li{
+    color: #737373;
+    font-size: 15px;
+    line-height: 18px;
+    padding: 15px;
+    border-top: 1px solid #e6e6e6
+}
+.pricing-list li:last-child{
+    border-bottom: 1px solid #e6e6e6
+}
+.pricing-list li:nth-child(odd){
+    background: #fafafa
+}
+.pricing-items.active .pricing-list li:nth-child(odd){
+    background: #e6e6e6;
+}
+.pricing-footer{
+    padding: 34px 28px;
+}
+.pricing-items.active .pricing-footer{
+    background: #e6e6e6;
+}
+.pricing-footer .btn{
+    height: 38px;
+    padding: 9px 33px 0;
 }
