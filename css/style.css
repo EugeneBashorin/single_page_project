@@ -160,12 +160,15 @@ display: none;
     display: flex;
     align-items: center;
     -ms-align-items:center;
-    max-width: 90%;
+    /*max-width: 90%;*/
     margin: 0 auto 150px;
 }
 .heading h2{
     /* Style for "About" */
     /*height: 21px;*/
+    width: 200px;/*ширина элементов заголовка, для выравнивания отступа всех подобых эл. от правого края*/
+    flex: none;/*ширина эл.постоянная не зависин от размера шир. браузера*/
+    text-align: right;/*равняем по-правому краю элемент//прижимаем к вертик линии*/
     color: #0d0d0d;
     font-size: 30px;
     font-weight: 700;
@@ -663,4 +666,195 @@ display: none;
 .pricing-footer .btn{
     height: 38px;
     padding: 9px 33px 0;
+}
+
+/*testimonial*/
+
+.testimonial{
+    text-align: center;
+    color: #fff;
+}
+.testimonial_text{
+    margin: 35px 0 25px;
+    font-family: "Open Sans Light";
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 30px;
+}
+
+.testimonial .quot_author:before{
+    display: none;
+}
+.testimonial .quot_author:after{
+    content:'';
+    display: block;
+    margin:20px auto 0;
+    width: 50px;
+    height: 4px;
+    background-color: #f39c12;
+}
+
+.testimonial_avatar{
+    width: 104px;
+    height: 104px;
+    margin: 0 auto;/*центровка в блочном элементе*/
+    /*text-align: center; => центровка в inline элементе*/
+    border-radius: 50%;
+    overflow: hidden;/*скрываем, все что выходит за границы блока*/
+    
+}
+.testimonial_avatar img{
+    display: block;/*Убираем лишние отступы(блочный элемент)*/
+    width: 100%;/*занимает всю ширину элемента*/
+}
+
+/*portfolio TABS*/
+.nav-tab-list{
+    list-style: none;/*del marker*/
+    text-align: center;
+    margin-bottom: 80px;
+}
+.nav-tab-list_item{
+    display: inline-block;/*преобразуем в бл. эл. выстраиваем в линию*/
+}
+.nav-tab-list_item.active .nav-tab-list_link{
+    color: #f39c12;
+}
+
+.nav-tab-list_item:after{
+    content: '\\\\';
+    color: #a6a6a6;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 25px;
+    margin: 0 18px;
+}
+.nav-tab-list_item:last-child:after{
+    display: none;
+}
+
+.nav-tab-list_link{
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 25px;
+    text-transform: uppercase;
+    color: #0d0d0d;
+    /*position: relative;*/
+}
+.nav-tab-list_link:hover{
+    color:#f39c12;
+}
+
+.hide{
+    position: absolute;
+    left:0;
+    top:0;
+    width: 0;
+    height: 0;
+    overflow:hidden;/*обтекание*/
+    z-index: -1;/*чтобы все блоки перекрывали данный блок*/
+    opacity: 0;
+}
+
+.tab-cont{
+    opacity: 1;
+    transition: opacity 0.4s;
+}
+.tab-cont.hide{
+    opacity: 0;
+}
+
+.portfolio-list{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.portfolio-list_item{
+    width: 25%;
+    position: relative;
+}
+.portfolio-list_item:nth-child(2) .portfolio-list_img,
+.portfolio-list_item:nth-child(4) .portfolio-list_img,
+.portfolio-list_item:nth-child(5) .portfolio-list_img,
+.portfolio-list_item:nth-child(7) .portfolio-list_img{
+    background-color: #b7b7b7;
+}
+.portfolio-list_item:hover .portfolio-list_preview{
+    display: block;
+}
+.portfolio-list_item:hover .portfolio-list_img [class*="icon"]{
+    display: none;
+}
+.portfolio-list_item:hover .portfolio-list_title{
+    color: #f39c12;
+}
+
+.portfolio-list_item:hover .portfolio-list_img{
+    background-color: #fff;
+}
+.portfolio-list_item:hover .portfolio-list_img img{
+    opacity: 0.6;
+}
+
+.portfolio-list_link{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;/*для того чтобы ссыка была выше чем кнопка +*/
+}
+.portfolio-list_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 58px;
+    overflow: hidden;
+    height: 220px;
+    background-color: #c7c7c7;
+    position: relative;
+}
+
+.portfolio-list_img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition:opacity 0.4s;
+}
+
+.portfolio-list_footer{
+    padding: 20px 10px;
+    text-align: center;
+}
+.portfolio-list_title{
+    font-size: 15px;
+    color: #0d0d0d;
+    font-weight: 700;
+    line-height: 22px;
+    text-transform: uppercase;
+    margin-bottom:4px;
+}
+.portfolio-list_category{
+    color: #8c8c8c;
+    font-size: 14px;
+    font-weight: 400;
+}
+.portfolio-list_preview{
+    /*position: relative; => portfolio-list_img*/
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);/*сдвиг влево и вверх на 50% от его размера 99рх центровака*/
+    width: 99px;
+    height: 99px;
+    border-radius:50%;
+    background: rgba( 243, 156, 18, 0.5) url(../img/plus.png) no-repeat center;
+    display: none;
+    z-index: 3;
+}
+.portfolio-list_preview:hover{
+    background-color: rgba( 243, 156, 18, 0.8);
 }
