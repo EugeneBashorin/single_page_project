@@ -858,3 +858,42 @@ display: none;
 .portfolio-list_preview:hover{
     background-color: rgba( 243, 156, 18, 0.8);
 }
+
+/*bloc tweeter*/
+.tweet{
+    text-align: center;
+    color: #fff;
+}
+
+.tweet-wrap_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:0 auto;
+    width: 104px;
+    height: 104px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+}
+.tweet-wrap_icon img{
+    display: block;
+}
+.tweet-wrap_text{
+    margin:35px 0 6px;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+}
+.tweet-wrap_text a{
+    color: #f39c12;
+}
+.tweet-wrap_text a:hover{
+    text-decoration: underline;
+}
+.tweet-wrap_time{
+    color: #808080;
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+}
