@@ -2,6 +2,7 @@ body{
     color: #4d4d4d;
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 16px;
+    line-height: 1;
 }
 
 .wrapper{
@@ -37,6 +38,14 @@ h1 .sm{
     font-weight: 300;
     line-height: 60px;
 }
+h2{
+    font-size:30px;
+    font-weight:700;
+    color: #0d0d0d;
+    line-height: 35px;
+    text-transform: uppercase;
+}
+
 h6{
     /* Style for "Our Story" */
     color: #0d0d0d;
@@ -45,6 +54,11 @@ h6{
     line-height: 25px;
     text-transform: uppercase;
 }
+
+p{
+    line-height: 28px;
+}
+
 .hr{
     height: 2px;
     margin: 120px 0;
@@ -64,6 +78,7 @@ h6{
     font-weight: 400;
     text-transform: uppercase;
     text-decoration: none;
+    transition: all 0.3s;
 }
 
 .btn:hover{
@@ -75,6 +90,56 @@ h6{
 .btn-warning{
     color: #0d0d0d;
     border-color: #f39c12;
+}
+.btn-sm{
+    height: 38px;
+    padding-top: 9px;
+}
+input.btn, button.btn-warning{
+    padding-top: 0 !important;
+}
+/*FORM-ELEMENTS*/
+.form_field{
+    position: relative;
+    margin-bottom:10px;
+}
+.form-control{
+    display: block;
+    padding: 0 70px 0 25px;
+    width: 100%;
+    height: 45px;
+    border: 2px solid #d9d9d9;
+    background-color: #ffffff;
+    color: #808080;
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-weight: 400;
+    transition: all 0.3s;
+}
+.form-control:focus{
+    border-color: #f39c12;
+}
+.form-control:focus + .form_field_icon{
+    color: #f39c12;
+}
+
+.form_field_icon{
+    position: absolute;
+    top:15px;
+    right: 30px;
+    width: 20px;
+    text-align: center;
+    font-size: 16px;    
+    color: #808080;
+    transition: all 0.3s;
+}
+.form_field_icon .icon-mail{
+    font-size: 12px;
+}
+textarea.form-control{
+    min-height: 125px;
+    resize: none;
+    padding-top:10px;
 }
 
 header{
@@ -143,8 +208,12 @@ display: none;
 }
 /*banner*/
 .banner{ 
-    padding-top: 450px;
-    padding-bottom: 280px;
+    /*padding-top: 450px;
+    padding-bottom: 280px;*/
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 1100px;
     text-align: center;
     background: url("../img/banner.png") no-repeat center top;
@@ -166,14 +235,14 @@ display: none;
 .heading h2{
     /* Style for "About" */
     /*height: 21px;*/
-    width: 200px;/*ширина элементов заголовка, для выравнивания отступа всех подобых эл. от правого края*/
+   /* width: 200px;=> h2/*ширина элементов заголовка, для выравнивания отступа всех подобых эл. от правого края*/
     flex: none;/*ширина эл.постоянная не зависин от размера шир. браузера*/
     text-align: right;/*равняем по-правому краю элемент//прижимаем к вертик линии*/
     color: #0d0d0d;
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 35px;
-    text-transform: uppercase;
+    /*font-size: 30px;
+    font-weight: 700; => h2*/
+    /*line-height: 35px;=> h2*/
+    /*text-transform: uppercase;=> h2/*/
     position: relative;
     margin-right: 40px;
 }
@@ -400,10 +469,20 @@ display: none;
     flex-wrap: wrap;
 }
 .team-list_item{
+    display: flex;/*to align socials by bottom level*/
+    flex-direction: column;/*to align socials by bottom level*/
     width: 269px;
     padding: 25px 15px 30px;
     text-align: center;
     border-top: 4px solid transparent;/*прозрачный, чтоб не прыгал блок при наведении*/
+}
+
+.team-list_item .social{/*to align socials by bottom level*/
+    flex: 1;
+    height:100%;/*the same as flex: 1=> dublicate if flex doesn't work*/
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
 .team-list_item:hover{
@@ -420,6 +499,7 @@ display: none;
     font-size: 62px;
     position: relative;
     display: flex;
+    flex:none;/*картинка не будет ужиматься если сужать поле*/
     width: 200px;
     height: 200px;
     border: 6px solid #f2f2f2;
@@ -989,4 +1069,88 @@ display: none;
     height:35px;
     font-size:14px;
     padding: 8px 27px 0;
+}
+/*CLIENTS*/
+.clients h2{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 55px;
+}
+.clients-list{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    /*align-items: center;*/
+    justify-content: space-between;
+}
+.clients-list_item a{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 257px;
+    height: 162px;
+    padding:15px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+}
+.clients-list_item a:hover{
+    border-color: rgba(255, 255, 255, 0.8);
+}
+.clients-list_item img{
+    max-width:100%;
+    display: block;
+}
+/*contacts*/
+.contact-wrap{
+    display: flex;
+}
+.contact-wrap .contact-form{
+    padding-top: 8px;
+}
+.contact-wrap_left{
+    width: 53%;
+}
+.contact-wrap_right{
+    width: 47%;
+    flex-shrink: 47%;
+    padding-left: 60px;
+}
+.contact-wrap h6{
+    margin-bottom: 28px;
+}
+.contact-wrap p{
+    margin-bottom: 35px;
+}
+.contact-list{
+    list-style: none;
+}
+
+.contact-list_item{
+    position: relative;
+    color: #0d0d0d;
+    line-height: 25px;
+    letter-spacing: -0.32px;
+    margin-bottom: 18px;
+    padding-left: 50px;
+}
+.contact-list_item a{
+    color: #0d0d0d;
+}
+.contact-list_item a:hover{
+    text-decoration: none;
+    color: #f39c12;
+}
+
+.contact-list_icon
+{
+    position: absolute;
+    top:-4px;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    color: #0d0d0d;
+    border: 2px solid #f39c12;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
