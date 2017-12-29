@@ -326,6 +326,7 @@ display: none;
     justify-content: center;
     align-items: center;
     font-size: 32px;
+    color: #fff;/*to white color for icon*/
     /*background-color: #ffffff;*/
 }
 .box-skills{
@@ -508,6 +509,7 @@ display: none;
     align-items: center;
     justify-content: center;
     margin: 0 auto 25px; /*для нижнего отступа от h4*/
+    color: #fff;/*to white color for icon*/
 }
 
 .team-list_img:after{
@@ -878,6 +880,7 @@ display: none;
 .portfolio-list_item:hover .portfolio-list_img img{
     opacity: 0.6;
 }
+.portfolio-list_item span{color: #fff;}/*to white color icon*/
 
 .portfolio-list_link{
     position: absolute;
@@ -1007,7 +1010,7 @@ display: none;
     display: block;
     min-height: 300px;
 }
-
+.blog-list_image .icon-photo{color: #fff;}/*to white color of icon*/
 .blog-list_link{
     position: absolute;
     top: 0;
@@ -1153,4 +1156,51 @@ display: none;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/*MAPS*/
+#map{
+    position: relative;
+    overflow: hidden;
+}
+
+#map:after ,#map:before{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid #fff;
+    border-left: 100vw solid transparent;
+}
+#map:before{
+    top:0;
+    right:0;
+    transform:rotate(180deg);
+}
+/*footer*/
+
+.footer-flex{
+    display: flex;
+    align-items:center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.footer-flex .social{
+    margin-left: auto;
+}
+.footer-flex .social_link{
+    color: #0d0d0d;
+}
+.footer-flex .social_link:hover{
+    color: #f39c12;   
+}
+.copyright{
+    color: #0d0d0d;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
 }
