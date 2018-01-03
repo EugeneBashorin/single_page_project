@@ -64,7 +64,7 @@ p{
     margin: 120px 0;
     background-color: #e6e6e6;
 }
-/*Buttons*/
+/*Buttons============================================================*/
 .btn{
     display: inline-block;/*все кнопки должны быть  блочными элементами*/
     vertical-align: middle;
@@ -78,9 +78,9 @@ p{
     font-weight: 400;
     text-transform: uppercase;
     text-decoration: none;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
-
 .btn:hover{
     background-color: #f39c12;
     border-color: #f39c12;
@@ -98,7 +98,7 @@ p{
 input.btn, button.btn-warning{
     padding-top: 0 !important;
 }
-/*FORM-ELEMENTS*/
+/*FORM-ELEMENTS============================================================*/
 .form_field{
     position: relative;
     margin-bottom:10px;
@@ -114,6 +114,7 @@ input.btn, button.btn-warning{
     font-family: "Open Sans";
     font-size: 15px;
     font-weight: 400;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
 .form-control:focus{
@@ -122,7 +123,6 @@ input.btn, button.btn-warning{
 .form-control:focus + .form_field_icon{
     color: #f39c12;
 }
-
 .form_field_icon{
     position: absolute;
     top:15px;
@@ -131,6 +131,7 @@ input.btn, button.btn-warning{
     text-align: center;
     font-size: 16px;    
     color: #808080;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
 .form_field_icon .icon-mail{
@@ -141,7 +142,6 @@ textarea.form-control{
     resize: none;
     padding-top:10px;
 }
-
 header{
     position: absolute; /*фиксируем header*/
     top:84px; /*положение от верх края*/
@@ -149,17 +149,27 @@ header{
     right: 0;
     z-index: 99; /*для того чтобы был выше всех блоков на сайте*/
 }
-
-.header-wrap{           /*для выравнивания 2х элементов header относительно друг-друга*/
+.header-wrap{ /*для выравнивания 2х элементов header относительно друг-друга*/
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between; /*для выравнивания блока nav отн. logo*/
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; /*для выравнивания блока nav отн. logo*/
 }
-
 .logo a{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;/*для упрощения работы с позиционированием flex box*/
-    align-items: center;/*выравнивание по вертикали элемента*/
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;/*выравнивание по вертикали элемента*/
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 150px;
     height: 150px;
     border: 2px solid #ffffff;
@@ -173,6 +183,8 @@ header{
 }
 .menu{
     list-style: none;/*delete markers to UL*/
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .menu_item{                     /*расстояние между элементами LI ссылками nav*/
@@ -206,19 +218,27 @@ display: none;
 .menu_link:hover{
     color: #0d0d0d;
 }
-/*banner*/
+/*BANNER============================================================*/
 .banner{ 
     /*padding-top: 450px;
     padding-bottom: 280px;*/
     padding-top: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /*-webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;*/
     height: 1100px;
     text-align: center;
     background: url("../img/banner.png") no-repeat center top;
 }
-
+.banner-slider .slick-dots{/*position of dots for slider*/
+    margin-top: 80px; 
+}
 /*.about{
     padding: 100px 0;
     /*height: 1180px;
@@ -226,8 +246,12 @@ display: none;
 /*} =>.section-common*/
 
 .heading{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -ms-align-items:center;
     /*max-width: 90%;*/
     margin: 0 auto 150px;
@@ -236,7 +260,9 @@ display: none;
     /* Style for "About" */
     /*height: 21px;*/
    /* width: 200px;=> h2/*ширина элементов заголовка, для выравнивания отступа всех подобых эл. от правого края*/
-    flex: none;/*ширина эл.постоянная не зависин от размера шир. браузера*/
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;/*ширина эл.постоянная не зависин от размера шир. браузера*/
     text-align: right;/*равняем по-правому краю элемент//прижимаем к вертик линии*/
     color: #0d0d0d;
     /*font-size: 30px;
@@ -260,7 +286,9 @@ display: none;
 }
 .heading p{
     /* Style for "Proin grav" */
-    flex: 1;/*будет занимать все пространство*/
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;/*будет занимать все пространство*/
     color: #4d4d4d;
     font-size: 16px;
     font-weight: 400;
@@ -269,25 +297,43 @@ display: none;
 }
 
 .about-wrapp{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     /*border-bottom: 2px solid #e6e6e6;
     padding-bottom: 120px;*/
 }
 
 .about-wrap-content{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-start;
-    flex: 1;/*элемент занимает все свободное пространство, прижимает картинку к краю*/
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;/*элемент занимает все свободное пространство, прижимает картинку к краю*/
 }
 .about-wrap-content_icon{
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    align-items: center; /*vertical align*/
-    justify-content: center; /*gorisontal align*/
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; /*vertical align*/
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; /*gorisontal align*/
     width: 125px;
     height: 125px;
     font-size: 40px;    /*размер иконки переведенной в текст*/
-    flex:none;          /*при растяжении эл-тов круг не менял форму*/
+    -webkit-box-flex:0;
+        -ms-flex:none;
+            flex:none;          /*при растяжении эл-тов круг не менял форму*/
     margin-right: 29px;
     border: 2px solid #f39c12;
     border-radius: 50%;
@@ -316,31 +362,44 @@ display: none;
     position: relative;
     margin-left: 60px;
 }
+.about-wrap-img img{/*для растяг.по ширине картинки и заполнен собой всего блока-контейнера*/
+    max-width: 100%;
+    display: block;
+}
 .about-wrap-img_icon{
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 32px;
     color: #fff;/*to white color for icon*/
     /*background-color: #ffffff;*/
 }
 .box-skills{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     /*margin-top: 120px;*/
 }
 
-.box-skills-item{
-    flex: 1;
+.box-skills_item{
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     width: 50%;  
-    padding  
 }
 
-.box-skills-item img{
+.box-skills_item img{
     display: inline-block;
     max-width:100%;
 }
@@ -352,7 +411,7 @@ display: none;
     padding-left: 40px;
 }
 
-/*Bars progress*/
+/*Bars progress============================================================*/
 .box-bars{
     margin-top: 60px;
 }
@@ -379,30 +438,30 @@ display: none;
 }
 .bars-line{
     background-color: #e7e7e7;
-    height: 10px;
-
 }
 .bars-line > div {
     background-color: #f39c12;
     height: 10px;
 }
-
-/*COMMON PADDING TO CLASSES ABOUT/TEAM/SERVICE/...*/
+/*COMMON PADDING TO CLASSES ABOUT/TEAM/SERVICE/...============================================================*/
 .section-common
 {
     padding: 105px 0 100px; 
 }
-
-/*section-quot background*/
+/*section-quot background============================================================*/
 .section-bg
 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 700px;
     background: url('../img/qout.png') no-repeat center top;
     background-size: auto;/* cover;*/
 }
-/*QUOT*/
+/*QUOT============================================================*/
 /*.quot-box
 {
     padding: 250px 0;
@@ -425,7 +484,6 @@ display: none;
     padding:0 50px;
     margin-bottom: 30px;
 }
-
 .quot_text:after, .quot_text:before{
     content: '"';
     display: block;
@@ -436,7 +494,6 @@ display: none;
     line-height: 60px;
     top:0;
 }
-
 .quot_text:before{
     left: 0;
 }
@@ -449,7 +506,6 @@ display: none;
     font-weight: 700;
     line-height: 30px;
     text-transform: uppercase;
-
 }
 .quot_author:before{
     content:'';
@@ -459,62 +515,84 @@ display: none;
     height: 4px;
     background-color: #f39c12;
 }
-/*TEAM*/
+/*TEAM============================================================*/
 /*.box-team{
    padding: 100px 0 100px; 
 }   => section-common*/
-
 .team-list{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 .team-list_item{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;/*to align socials by bottom level*/
-    flex-direction: column;/*to align socials by bottom level*/
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;/*to align socials by bottom level*/
     width: 269px;
     padding: 25px 15px 30px;
     text-align: center;
     border-top: 4px solid transparent;/*прозрачный, чтоб не прыгал блок при наведении*/
 }
-
 .team-list_item .social{/*to align socials by bottom level*/
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     height:100%;/*the same as flex: 1=> dublicate if flex doesn't work*/
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
-
 .team-list_item:hover{
     background-color: #f0f0f0;
     border-color:#f39c12;/*просто меняем цвет бордера, остальные настройки в основном блоке*/
-
 }
 .team-list_item:hover .team-list_job:after{
     background-color: #e74c3c;
 }
-
 .team-list_img
 {
     font-size: 62px;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex:none;/*картинка не будет ужиматься если сужать поле*/
+    -webkit-box-flex:0;
+        -ms-flex:none;
+            flex:none;/*картинка не будет ужиматься если сужать поле*/
     width: 200px;
     height: 200px;
     border: 6px solid #f2f2f2;
     border-radius: 50%;
     background-color: #e8f8f4;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 0 auto 25px; /*для нижнего отступа от h4*/
     color: #fff;/*to white color for icon*/
 }
-
 .team-list_img:after{
     position: absolute;
     content: "";
+    top:-7px;/*circle for icon for IE -6px becouse border: 6px solid #f2f2f2;*/
+    left: -7px;/*circle for icon for IE -6px becouse border: 6px solid #f2f2f2;*/
     display: block;
     width: 202px;
     height: 202px;
@@ -523,7 +601,7 @@ display: none;
 }
 .team-list_img img{
     width: 100%;
-    height: 100%
+    height: 100%;
     border-radius:50%;
     display: block;
 }
@@ -535,7 +613,6 @@ display: none;
 
 }
 .team-list_job:after{
-
     display:block;
     margin:10px auto 15px; /*align centre*/
     content: "";
@@ -549,7 +626,6 @@ display: none;
     line-height: 28px;
     margin-bottom: 25px;
     }
-
 .social_link{
     font-size: 18px;
     color: #999999;
@@ -563,12 +639,15 @@ display: none;
 .social_link:hover{
      color: #f39c12;
 }
-/*facts list*/
+/*FACTS_LIST============================================================*/
 .facts-list{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
-
 .facts-list_item:hover .facts-list_icon{
     color: #f39c12;
     border-color: #ffffff;
@@ -576,27 +655,31 @@ display: none;
 .facts-list_item:hover [class*="icon"]:before{
     color: #f39c12;
 }
-
-
 .facts-list_icon{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 170px;
     height: 170px;
     margin-bottom:30px;
     font-size: 32px;
     border: 2px solid #f39c12;
     border-radius: 50%;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
 .facts-list_icon [class*="icon"]:before{
     color: #ffffff;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
-
 .facts-list_item h5{
-    /* Style for "6K+ Coffee" */
     color: #ffffff;
     font-size: 25px;
     line-height: 29px;
@@ -604,27 +687,33 @@ display: none;
     text-align:center;
 }
 .facts-list_item h5 span{
-    /* Text style for "6K+" */
     font-size: 45px;
     line-height: 45px;
     display: block;/*для представления в блочный элем. span/ перекидывает в новую строку*/
 }
 
-/*service*/
+/*SERVICE============================================================*/
 .service-list{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     text-align: center;
     margin: 0 -10px;
     /*margin-left: 30px;*/
-
 }
 .service-list_items{
     padding: 0 10px;
 }
 .service-list_icon{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items:center;
-    justify-content: center;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 105px;
     height: 105px;
     margin: 0 auto 30px;
@@ -632,18 +721,19 @@ display: none;
     border-radius: 50%;
     color: #0d0d0d;
     font-size: 27px;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
 .service-list_icon [class*="icon"]:before{
     color:#0d0d0d;
+    -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
 .service-list_items:hover .service-list_icon{
     background: #f39c12;
 }
 
-
-/*PRICING*/
+/*PRICING===========================================================*/
 .service-list_items:hover .service-list_icon [class*="icon"]:before{
     color:#ffffff;
 }
@@ -656,6 +746,8 @@ display: none;
     line-height: 28px;
 }
 .box-pricing{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .box-pricing .service-list_icon{
@@ -665,11 +757,19 @@ display: none;
     font-size: 32px;
 }
 .pricing{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     /*center; can't use center becouse we have different top/bottom borders*/
     text-align: center;
     margin-left: 5%;
+    /*ADAPT FOR IE*/
+        -webkit-box-flex: 0;
+        -ms-flex: none;
+        flex: none;/*запрет на сужение таблицы при изменении размера страницы*/
 }
 .pricing-items{
    border: 1px solid #e6e6e6;
@@ -705,9 +805,7 @@ display: none;
 } 
 .pricing-items.active .pricing-header_title{
     color: #ffffff;
-    
 }
-
 .pricing-header_title span:before{
     content: "";
     display: block;
@@ -750,8 +848,10 @@ display: none;
     padding: 9px 33px 0;
 }
 
-/*testimonial*/
-
+/*testimonial=====================================================*/
+.testimonial-slider .slick-dots{
+    margin-top:  26px;
+}
 .testimonial{
     text-align: center;
     color: #fff;
@@ -776,7 +876,6 @@ display: none;
     height: 4px;
     background-color: #f39c12;
 }
-
 .testimonial_avatar{
     width: 104px;
     height: 104px;
@@ -791,7 +890,43 @@ display: none;
     width: 100%;/*занимает всю ширину элемента*/
 }
 
-/*portfolio TABS*/
+/*portfolio TABS===================================================*/
+.portfolio-slider{
+    position: relative;
+}
+.portfolio-slider .slick-dots{
+    position: absolute;
+    top:50%;
+    right: 20px;
+    -webkit-transform: translate(0 -50%);
+            transform: translate(0 -50%);
+}
+.portfolio-slider .slick-dots li{
+    margin:5px 0;
+    display: block;
+}
+.portfolio-slider_button{
+    margin-top: 50px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.portfolio-slider_button button{
+    width: 38px;
+    height: 38px;
+    border: 2px solid #e6e6e6;
+    background-color: #ffffff;
+    margin:0 4px;
+}
+.portfolio-slider_footer{
+    text-align: center;
+}
+.portfolio-slider_footer .portfolio-list_title{
+font-size: 20px;
+line-height: 24px;
+
+}
+
 .nav-tab-list{
     list-style: none;/*del marker*/
     text-align: center;
@@ -843,6 +978,7 @@ display: none;
 
 .tab-cont{
     opacity: 1;
+    -webkit-transition: opacity 0.4s;
     transition: opacity 0.4s;
 }
 .tab-cont.hide{
@@ -850,9 +986,14 @@ display: none;
 }
 
 .portfolio-list{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 .portfolio-list_item{
     width: 25%;
@@ -891,9 +1032,15 @@ display: none;
     z-index: 2;/*для того чтобы ссыка была выше чем кнопка +*/
 }
 .portfolio-list_img{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     font-size: 58px;
     overflow: hidden;
     height: 220px;
@@ -905,6 +1052,7 @@ display: none;
     display: block;
     width: 100%;
     height: 100%;
+    -webkit-transition:opacity 0.4s;
     transition:opacity 0.4s;
 }
 
@@ -930,7 +1078,8 @@ display: none;
     position: absolute;
     top:50%;
     left:50%;
-    transform: translate(-50%, -50%);/*сдвиг влево и вверх на 50% от его размера 99рх центровака*/
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);/*сдвиг влево и вверх на 50% от его размера 99рх центровака*/
     width: 99px;
     height: 99px;
     border-radius:50%;
@@ -942,16 +1091,22 @@ display: none;
     background-color: rgba( 243, 156, 18, 0.8);
 }
 
-/*bloc tweeter*/
+/*bloc tweeter=====================================================*/
 .tweet{
     text-align: center;
     color: #fff;
 }
 
 .tweet-wrap_icon{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin:0 auto;
     width: 104px;
     height: 104px;
@@ -981,11 +1136,16 @@ display: none;
     font-weight: 300;
     font-style: italic;
 }
-/*BLOG*/
+/*BLOG==============================================================*/
 .blog-list{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;    
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;    
+    -webkit-box-pack: justify;    
+        -ms-flex-pack: justify;    
+            justify-content: space-between;
 }
 .blog-list_items{
     width: 555px;
@@ -993,9 +1153,15 @@ display: none;
 }
 
 .blog-list_image{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;/*for center icon*/
-    align-items: center;/*for center icon*/
-    justify-content: center;/*for center icon*/
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;/*for center icon*/
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;/*for center icon*/
     font-size: 58px;/*for center icon*/
     position: relative;
     height: 300px;
@@ -1024,13 +1190,23 @@ display: none;
     position: absolute;
     bottom:0;
     right:0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-end;/*выравнивание по нижней границе*/
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;/*выравнивание по нижней границе*/
 }
 .blog-list_icon{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 44px;
     height: 44px;
     font-size: 18px;
@@ -1043,6 +1219,8 @@ display: none;
     padding: 25px 20px 10px;
 }
 .blog-list_footer{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     /*align-items: flex-start;*/
     padding-top: 20px;
@@ -1073,7 +1251,7 @@ display: none;
     font-size:14px;
     padding: 8px 27px 0;
 }
-/*CLIENTS*/
+/*CLIENTS=========================================================*/
 .clients h2{
     color: #fff;
     text-align: center;
@@ -1081,15 +1259,26 @@ display: none;
 }
 .clients-list{
     list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     /*align-items: center;*/
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 .clients-list_item a{
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 257px;
     height: 162px;
     padding:15px;
@@ -1104,6 +1293,8 @@ display: none;
 }
 /*contacts*/
 .contact-wrap{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .contact-wrap .contact-form{
@@ -1114,7 +1305,8 @@ display: none;
 }
 .contact-wrap_right{
     width: 47%;
-    flex-shrink: 47%;
+    -ms-flex-negative: 47%;
+        flex-shrink: 47%;
     padding-left: 60px;
 }
 .contact-wrap h6{
@@ -1153,21 +1345,29 @@ display: none;
     color: #0d0d0d;
     border: 2px solid #f39c12;
     border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 /*MAPS*/
 #map{
     position: relative;
     overflow: hidden;
+    height: 600px;/*for google map*/
 }
 
 #map:after ,#map:before{
     position: absolute;
     bottom:0;
     left: 0;
+    z-index: 1;/*для гугл карты нижней отображения стрелки, карта перекрывает обрез*/
     content: '';
     display: block;
     width: 0;
@@ -1178,13 +1378,18 @@ display: none;
 #map:before{
     top:0;
     right:0;
-    transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+            transform:rotate(180deg);
 }
 /*footer*/
 
 .footer-flex{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items:center;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
     padding-top: 40px;
     padding-bottom: 40px;
 }
@@ -1203,4 +1408,103 @@ display: none;
     font-size: 14px;
     line-height: 18px;
     text-transform: uppercase;
+}
+/*ADAPTIVE*/
+@media(max-width: 1200px){/*desctop*/
+    .heading{
+        margin-bottom: 110px;
+    }
+    .heading h2{
+        width: auto;
+    }
+    .heading p{
+        font-size: 14px;
+        line-height: 18px
+    }
+    .about-wrap-img{
+       max-width: 40%; 
+       margin-left: 40px;
+    }
+    .box-skills_item_img{
+        width: 44%;
+            -webkit-box-flex:0;
+            -ms-flex:none;
+            flex:none;
+    }
+}
+@media(max-width: 991px){/*Tabs*/
+    .section-common{
+        padding:70px 0;
+    }
+    .hr{
+        margin:80px 0;
+    }
+    /*.about-wrapp===============*/
+    .about-wrapp{
+        display:block;
+    }
+    .about-wrap-img{
+        margin: 40px auto 0;/*centre image/ del left marg*/
+        max-width: 80%;
+    }
+    .about-wrap-img img{
+        width: 100%;
+    }
+    /*box-skills================*/
+    .box-skills{
+        display:block;
+    }
+    .box-skills_item_img{
+         margin: 0 auto 40px;/*centre image/ del left marg*/
+         width: auto;
+         padding-right:0;
+         text-align: center;
+    }
+    .box-skills_item_content{
+        padding-left: 0;
+    }
+    .box-skills_item{
+        width: auto;/*not 100% becouse display:block*/
+    }
+}
+@media (max-width: 767px) {
+    .section-common{
+        padding: 60px 0;
+    }
+     .hr{
+        margin:45px 0;
+    }
+    .wrapper{
+        padding: 0 20px;
+    }
+    .heading{
+        display: block;
+        margin-bottom: 50px;/*becouse hide content*/
+    }
+    .heading p{
+        display: none;
+    }
+    .heading h2{
+        margin-right: 0;
+        text-align: center;
+    }
+    .heading h2:after{
+        position: static;
+       /* margin-left: 0;
+        margin-top:0;*/
+        margin: 10px auto 0;/*top width bottom*/
+        width: 45px;
+        height: 4px;
+        text-align: center;
+    }
+    .about-wrap-content{
+        display: block;
+        text-align: center;
+    }
+    .about-wrap-content_icon{
+        margin: 0 auto 30px;
+    }
+    .about-wrap-img{
+        max-width: 100%;
+    }
 }
