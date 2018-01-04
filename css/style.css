@@ -10,9 +10,7 @@ body{
     max-width: 1250px;/*было 1190 => добавили 2 padding*/
     padding: 0 40px;/*чтобы при сужении текс не налазил на границу браузера*/
     margin: 0 auto;     /*центровка блока по середине*/
-
 }
-
 h1{
     color: #ffffff;
     text-transform: uppercase;
@@ -22,7 +20,6 @@ h1{
     line-height: 60px;
     margin-bottom: 90px;
 }
-
 h1 .lg{
     /* Text style for "Design / B" */
     font-size: 70px;
@@ -31,7 +28,6 @@ h1 .lg{
     letter-spacing: -3px;
     display: block;
 }
-
 h1 .sm{
     /* Text style for "We Make Gr" */
     font-size: 40px;
@@ -45,7 +41,6 @@ h2{
     line-height: 35px;
     text-transform: uppercase;
 }
-
 h6{
     /* Style for "Our Story" */
     color: #0d0d0d;
@@ -54,11 +49,9 @@ h6{
     line-height: 25px;
     text-transform: uppercase;
 }
-
 p{
     line-height: 28px;
 }
-
 .hr{
     height: 2px;
     margin: 120px 0;
@@ -458,8 +451,9 @@ display: none;
         -ms-flex-align: center;
             align-items: center;
     height: 700px;
+    padding:100px 0;
     background: url('../img/qout.png') no-repeat center top;
-    background-size: auto;/* cover;*/
+    background-size: /*auto;*/ cover;
 }
 /*QUOT============================================================*/
 /*.quot-box
@@ -526,8 +520,8 @@ display: none;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    /*-ms-flex-wrap: wrap;
+        flex-wrap: wrap;*/
 }
 .team-list_item{
     display: -webkit-box;
@@ -1431,7 +1425,30 @@ line-height: 24px;
             -ms-flex:none;
             flex:none;
     }
+    /*section backgroung================*/
+    .section-bg{
+        height: auto;
+        min-height: 550px;
+    }
+    .quot_text{
+        font-size:35px;
+        line-height:50px;
+    }
+    /*team-block================*/
+    .team-list_img{
+        width: 150px;
+        height:150px;
+    }
+    .team-list_img:after{
+        width:152px;
+        height:152px;
+    }
+    .team-list_item p{
+        font-size: 14px;
+        line-height: 22px;
+    }
 }
+
 @media(max-width: 991px){/*Tabs*/
     .section-common{
         padding:70px 0;
@@ -1466,10 +1483,51 @@ line-height: 24px;
     .box-skills_item{
         width: auto;/*not 100% becouse display:block*/
     }
+    /*section backgroung================*/
+    .section-bg{
+        min-height: 480px;
+    }
+    .quot_text{
+        font-size:30px;
+        line-height:42px;
+    }
+    .quot_text:before,.quot_text:after{
+        font-size:91px;
+    }
+    .quot_author{
+        font-size:18px;
+        line-height:25px;
+    }
+     .quot_author:before{
+        margin-bottom:18px;
+    }
+    /*team-block================*/
+    .team-list{
+        flex-wrap:wrap;
+    }
+    .team-list_item{
+        width: 50%;
+    }
+    /*section-bg facts-list block*/
+    .facts-list_icon{
+        width: 140px;
+        height: 140px;
+        margin-bottom: 20px;
+    }
+    .facts-list h5{
+        font-size:20px;
+        line-height:24px;
+    }
+    .facts-list h5 span{
+        font-size:35px;
+        line-height:42px;
+    }
+
 }
+
 @media (max-width: 767px) {
     .section-common{
-        padding: 60px 0;
+        padding: 40px 0;
     }
      .hr{
         margin:45px 0;
@@ -1505,6 +1563,77 @@ line-height: 24px;
         margin: 0 auto 30px;
     }
     .about-wrap-img{
-        max-width: 100%;
+        max-width:100%;
     }
+    /*section backgroung================*/
+    .section-bg{
+        padding-top:60px;
+        padding-bottom:60px;
+        min-height:200px;
+        background-image:none;
+        background-color: #2b2a2a;
+    }
+    .quot_text{
+        font-size:22px;
+        line-height:28px;
+        padding:0 40px;
+    }
+    .quot_text:before,.quot_text:after{
+        font-size:60px;
+        line-height:28px;
+    }
+    .quot_author{
+        font-size:14px;
+        line-height:18px;
+    }
+    .quot_author:before{
+        margin-bottom:15px;
+    }
+    /*team-block================*/
+    .social_link{
+        margin-right:9px;
+    }
+    /*section-bg facts-list block*/
+    .facts-list{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .facts-list_item{
+        width:50%;
+        margin-bottom:20px;
+    }
+    .facts-list_item .facts-list_icon{
+        margin: 0 auto 15px;
+    }
+}
+@media(max-width:479px){
+.quot_text{
+        font-size:16px;
+        line-height:22px;
+        padding:0;
+        margin-bottom:25px;
+    }
+.quot_text:before,.quot_text:after{
+        position: static;
+        display: inline-block;
+        font-size:25px;
+        line-height:20px;
+    }
+     /*team-block============================*/
+    .team-list{
+        display: block;
+    }
+    .team-list_item{
+        width: auto;
+        border-bottom:1px solid #eee;
+    }
+    /*section-bg facts-list block============*/
+    .facts-list{
+        display: block;
+    }
+    .facts-list_item{
+        width:auto;
+        margin-bottom:20px;
+    }
+    
 }
