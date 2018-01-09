@@ -17,6 +17,16 @@ $(function(){
 		appendArrows:'.portfolio-slider_button',
 		prevArrow:'<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
 		nextArrow:'<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+		/*использует настройки на нужном расширении*/
+		responsive: [
+		{
+			breakpoint: 767,/*измен. хар-ка на расширении 767px*/			
+			settings: {/*примен настройки*/
+				dots:false,
+			}
+		}
+		]
+
 	})
 });
 function initMap(){
