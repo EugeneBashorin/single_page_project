@@ -1113,13 +1113,16 @@ line-height: 24px;
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;    
-    -webkit-box-pack: justify;    
+    margin: 0 -30px;        
+ /*   -webkit-box-pack: justify;    
         -ms-flex-pack: justify;    
-            justify-content: space-between;
+            justify-content: space-between;*/
 }
 .blog-list_items{
-    width: 555px;
-    margin-bottom: 60px;
+    width: calc(50% - 60px);
+    margin: 0 30px 60px;
+    /*width: 555px;*/
+    /*margin-bottom: 60px;*/
 }
 .blog-list_image{
     display: -webkit-box;
@@ -1133,9 +1136,9 @@ line-height: 24px;
             justify-content: center;/*for center icon*/
     font-size: 58px;/*for center icon*/
     position: relative;
-    height: 300px;
+    /*height: 300px;*/
     overflow: hidden;
-    background-color: #b7b7b7;
+    /*background-color: #b7b7b7;*/
 }
 .blog-list_image:hover .blog-list_title{
     color: #f39c12;
@@ -1143,7 +1146,7 @@ line-height: 24px;
 .blog-list_image img{
     width: 100%;
     display: block;
-    min-height: 300px;
+    /*min-height: 300px;*/
 }
 .blog-list_image .icon-photo{color: #fff;}/*to white color of icon*/
 .blog-list_link{
@@ -1378,8 +1381,47 @@ line-height: 24px;
     line-height: 18px;
     text-transform: uppercase;
 }
+.menu-toggle{
+    display: none;
+}
 /*ADAPTIVE*/
-@media(max-width: 1199px){/*desctop*/
+@media(max-height: 860px){
+    header{
+        top:40px;
+    }
+    .banner{
+        min-height: 850px;
+    }
+}
+@media(max-width: 1199px){/*descktop*/
+    /*BANNER MENU===========================*/
+    header{
+        top:40px;
+    }
+    .logo a{
+        width: 120px;
+        height: 120px;
+        font-size: 34px;
+        line-height: 34px;
+    }
+    .menu_item {
+        margin-left: 54px;
+    }
+    .menu_item:after{
+        margin-left: 20px;
+    }
+    h1{
+        margin-bottom: 50px;
+    }
+    h1, h1 .sm {
+    font-size: 38px;
+    line-height: 45px;
+    }
+    h1 .lg {
+    font-size: 50px;
+    line-height: 66px;
+    }
+    /*==================*/
     .heading{
         margin-bottom: 110px;
     }
@@ -1389,6 +1431,9 @@ line-height: 24px;
     .heading p{
         font-size: 14px;
         line-height: 18px
+    }
+    .banner-slider .slick-dots {
+        margin-top: 50px;
     }
     .about-wrap-img{
        max-width: 40%; 
@@ -1435,9 +1480,68 @@ line-height: 24px;
     .clients-list_item a{
         height:130px;
     }
+    /*BLOG====================================================*/
+    .blog-list{
+        margin: 0 -20px;
+    }
+    .blog-list_items{
+        width: calc(50% - 40px);
+        margin: 0 20px 40px;
+    }
+    .blog-list_title{
+        font-size: 18px;
+        padding: 20px 20px 15px;
+    }
+    .blog-list_info{
+        padding-left: 20px;
+        padding-right: 0;
+    }
 }
-
+@media(min-width: 992px){
+    .menu{
+        display: flex !important;/*чтобы перебить стили JS*/
+    }
+}
 @media(max-width: 991px){/*Tabs*/
+    .heading{
+        margin-bottom: 50px;
+    }
+    /*menu-toggle=====================*/
+    .menu-toggle{
+        display: inline-block;
+        border:none;
+        background-color: transparent;
+        padding: 0;
+        width: 37px;
+    }
+    .menu{
+        display: none;
+        position: absolute;
+        min-width: 200px;
+        top:100%;
+        margin-top: 20px;
+        right:0;
+        padding: 10px 0;
+        background-color: rgba(0,0,0,0.5)
+    }
+    .navigation{position: relative;}
+    .menu_item {margin-left: 0;}
+    .menu_item:after {display: none;}
+    .menu_link{
+        display: block;
+        padding: 10px 20px;
+    }
+    .menu_link:hover{
+        color:#fff;
+    }
+    .menu-toggle span{
+        display: block;
+        height: 3px;
+        background:#fff;
+    }
+    .menu-toggle span + span{
+        margin-top: 8px;
+    }
     .section-common{
         padding:70px 0;
     }
@@ -1510,7 +1614,7 @@ line-height: 24px;
         font-size:35px;
         line-height:42px;
     }
-/*section SERVICE*/
+    /*section SERVICE*/
     .service-list{
         margin:0 -5px;
     }
@@ -1539,6 +1643,40 @@ line-height: 24px;
     .pricing-items{
         width: auto;
         flex:1;/*разделяет 3 колонки прайса на 3 равные части(колонка занимает 1/3 часть контейера) Если было бы колонки, то на 4 части по 25%*/
+    }
+    /*BLOG=========================*/
+    .blog-list_image{
+        display: block;
+    }
+    .blog-list_icon{
+        position: absolute;
+        left:0;
+        top:0;
+    }
+    .blog-list_header{
+        position: static;
+    }
+    .blog-list_title{
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+    .blog-list_footer{
+        display: block;
+    }
+    .blog-list_info {
+    padding-left: 0;
+    }
+    .blog-list_date{
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .blog-list_date span{
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .blog-list_date span:last-child{
+        margin-right: 0;
     }
     /*CONTACTS======================================================*/
     .contact-wrap_right{
@@ -1571,6 +1709,24 @@ line-height: 24px;
     }
 }
 @media (max-width: 767px) {
+    /*header==================*/
+    header{
+        top:20px;
+    }
+    h1, h1 .sm {
+    font-size: 20px;
+    line-height: 28px;
+    }
+    h1 .lg {
+    font-size: 28px;
+    line-height: 32px;
+    }
+    .logo a{
+        height: 80px;
+        width: 80px;
+        font-size: 20px;
+        line-height: 20;
+    }
     .section-common{
         padding: 40px 0;
     }
@@ -1578,9 +1734,9 @@ line-height: 24px;
         margin:45px 0;
     }
     .wrapper{
-       /* padding: 0 20px;*/
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding: 20px 20px 20px;
+       /* padding-top: 20px;
+        padding-bottom: 20px;*/
     }
     .heading{
         display: block;
@@ -1606,6 +1762,19 @@ line-height: 24px;
         display: block;
         text-align: center;
     }
+    /*Banner*/
+    .banner{
+        min-height:1px;
+        height:auto;
+        padding: 145px 0 100px;
+    }
+    .banner:after{
+        display: none;
+    }
+    .banner-slider .slick-dots{
+        margin-top: 30px;
+    }
+    /*====================*/
     .about-wrap-content_icon{
         margin: 0 auto 30px;
     }
@@ -1698,7 +1867,15 @@ line-height: 24px;
         width: auto;
         padding-left: 0;
     }
-     /*OUR CLIENTS============================================*/
+    /*Blog========================================================*/
+    .blog-list{
+        display: block;
+    }
+    .blog-list_items{
+        width: auto;
+    }
+
+     /*OUR CLIENTS================================================*/
     .clients-list{
         display: block;
         text-align: center;
@@ -1716,15 +1893,14 @@ line-height: 24px;
         display: none;
     }
 }
-
 @media(max-width:479px){
-.quot_text{
+    .quot_text{
         font-size:16px;
         line-height:22px;
         padding:0;
         margin-bottom:25px;
     }
-.quot_text:before,.quot_text:after{
+    .quot_text:before,.quot_text:after{
         position: static;
         display: inline-block;
         font-size:25px;
@@ -1746,5 +1922,5 @@ line-height: 24px;
         width:auto;
         margin-bottom:20px;
     }
-    
+
 }
