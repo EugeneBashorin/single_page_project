@@ -220,11 +220,13 @@ display: none;
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
+            -webkit-align-items: center;
             align-items: center;
     /*-webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center;*/
-    height: 1100px;
+            justify-content: center;*/           
+    /*height: 1100px;*/
+    height: calc(100vh + 100px);
     text-align: center;
     background: url("../img/banner.png") no-repeat center top;
 }
@@ -1529,7 +1531,10 @@ line-height: 24px;
         background-color: rgba(0,0,0,0.5)
     }
     .navigation{position: relative;}
-    .menu_item {margin-left: 0;}
+    .menu_item {
+        margin-left: 0;
+        position: static;
+    }
     .menu_item:after {display: none;}
     .menu_link{
         display: block;
@@ -1545,6 +1550,10 @@ line-height: 24px;
     }
     .menu-toggle span + span{
         margin-top: 8px;
+    }
+    .banner{
+        min-height: 768px;
+        height: auto;
     }
     .section-common{
         padding:70px 0;
